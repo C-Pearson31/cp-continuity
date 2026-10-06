@@ -1,0 +1,17 @@
+{
+  "name": "cp-continuity",
+  "version": "0.1.2",
+  "description": "Selective continuity protection with session-aware budgets, exact user evidence, and verified handoffs. Claude Code only; live runtime validation required.",
+  "author": { "name": "ChatCPt" },
+  "license": "MIT",
+  "userConfig": {
+    "mode": { "type": "string", "title": "Continuity mode", "description": "auto, protect, or normal. First installation starts in normal for a safe smoke test; enable auto after live checks.", "default": "normal" },
+    "fraction": { "type": "number", "title": "Context trigger fraction", "description": "Capacity policy, not a hallucination boundary. Valid range 0.4 to 0.85.", "default": 0.72 },
+    "reserveTokens": { "type": "number", "title": "Minimum recovery reserve", "description": "Extra space for output and growth before reset.", "default": 24000 },
+    "summaryModel": { "type": "string", "title": "Summary model", "description": "Claude model alias or full ID used for chunk summaries.", "default": "sonnet" },
+    "maxSummaryCalls": { "type": "number", "title": "Summary calls per checkpoint", "description": "Budget limit; exceeding it blocks reset rather than dropping history.", "default": 12 },
+    "maxConsecutiveHandoffs": { "type": "number", "title": "Consecutive automatic handoffs", "description": "Pause after this many handoffs without a new user prompt.", "default": 2 },
+    "registryPath": { "type": "string", "title": "Optional model registry", "description": "Absolute path to verified API metadata. Used only when runtime window is unavailable.", "default": "" },
+    "registryMaxAgeDays": { "type": "number", "title": "Registry freshness days", "description": "Maximum age of the optional model registry before it is ignored.", "default": 7 }
+  }
+}

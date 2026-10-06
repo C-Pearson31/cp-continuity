@@ -1,0 +1,12 @@
+{
+  "name": "chatcpt-mods",
+  "owner": { "name": "ChatCPt" },
+  "description": "Claude Code mods by ChatCPt. Pilot builds; read each plugin's README before installing.",
+  "plugins": [
+    {
+      "name": "cp-continuity",
+      "source": "./plugins/cp-continuity",
+      "description": "Saves a verified handoff of your exact requirements, then clears and resumes long Claude Code sessions. Pilot."
+    }
+  ]
+}
